@@ -15,19 +15,17 @@ function App() {
           <Route path="/" element={<Welcome />} />
           <Route
             path="*"
-            element={
-              
+            element={      
               <div className="container mx-auto px-4 py-8 flex-1">
                 <Routes>
                   <Route path="/repositories" element={<Repositories />} />
-                  <Route path="/processed" element={<ProcessedRepos />} />
-                  <Route path="/chat/:repoId/:chatId" element={<ChatInterface />} />
+                  <Route path="/processed" element={<ProcessedRepos />} />               
                   <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
-              </div>
-            
+              </div>            
             }
           />
+          <Route path="/chat/:repoId/:chatId" element={<ChatInterface />} />
         </Routes>
       </div>
     </AuthProvider>
